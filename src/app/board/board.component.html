@@ -1,0 +1,6 @@
+<h1>Tic-Tac-Toe</h1>
+<button (click)=" newGame() " >Start New Game</button>
+<div class="row" *ngFor="let row of squares; index as i">
+    <app-square *ngFor="let square of squares; index as j" [value]=" squares[i][j] " (iAmClicked)=" makeMove(i,j) "></app-square>
+</div>
+<p *ngIf=" winner ">Winner is: {{ winner }}</p>
